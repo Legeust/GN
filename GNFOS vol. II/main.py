@@ -53,7 +53,7 @@ class Ammo:
 
 
 class Objectoid:
-    COOLDOWN = 30
+    COOLDOWN = 60
 
     def __init__(self, x, y, health=100):
         self.x = x
@@ -147,8 +147,8 @@ class Player(Objectoid):
 
 class Enemy(Objectoid):
     COLOR_MAP = {
-        "red": (ENEMY_DEMON, ENEMY_AMMO),
-        "green": (ENEMY_DEMON_TWO, ENEMY_AMMO),
+        "caco": (ENEMY_DEMON, ENEMY_AMMO),
+        "revenant": (ENEMY_DEMON_TWO, ENEMY_AMMO),
         }
 
     def __init__(self, x, y, color, health=100):
@@ -267,7 +267,7 @@ def main():
                 wave_len += 2
                 for i in range(wave_len):
                     enemy = Enemy(random.randrange(WIDTH + 100, WIDTH + 300), random.randrange(50, HEIGHT - 100), #chooses position
-                                  random.choice(["red", "green"])) #chooses type of enemy
+                                  random.choice(["caco", "revenant"])) #chooses type of enemy
                     enemies.append(enemy)
 
             else:
